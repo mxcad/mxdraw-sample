@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@types/node": "^17.0.21",
-    "mxdraw": "^0.1.17",
+    "mxdraw": "latest",
     "vue": "^3.2.25"
   },
   "devDependencies": {
