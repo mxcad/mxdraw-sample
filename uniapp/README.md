@@ -1,10 +1,13 @@
 # uniapp use mxdraw examples
 
 运行项目前
+
 ```sh
 yarn
 ```
-or 
+
+or
+
 ```sh
 npm install
 ```
