@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,27 +11,29 @@
 </head>
 
 <script>
-
-    Mx.loadCoreCode().then(()=> {
+    window.onload = () => {
         // 创建控件对象
         Mx.MxFun.createMxObject({
             canvasId: "mxcad", // canvas元素的id
             cadFile: "./demo/buf/$hhhh.dwg",
             useWebsocket: false,
         });
-    })
+    }
+
 </script>
 <style>
-.mxdiv {
-    width: 100%;
-    position: relative;
-    padding-top: 0;
-    height: 100vh;
-}
+    .mxdiv {
+        width: 100%;
+        position: relative;
+        padding-top: 0;
+        height: 100vh;
+    }
 </style>
+
 <body>
     <div class="mxdiv">
         <canvas id="mxcad"></canvas>
     </div>
 </body>
+
 </html>
