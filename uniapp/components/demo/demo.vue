@@ -1,21 +1,17 @@
 <template>
 	<view class="page-wrap">
-	
+
 		<div id="mxdiv">
-			
+
 		</div>
-	  
+
 	</view>
-	
-	
-	
-	
 </template>
 
 
 
 <script  lang="ts" setup >
-	
+
 
 </script>
 
@@ -27,26 +23,29 @@
 			const canvas = document.createElement('canvas')
 			const mxdiv = document.getElementById("mxdiv")
 			canvas.id = 'myCanvas'
-			mxdiv.style.width = "99vw"
-			mxdiv.style.height = "80vh"
+			mxdiv.style.width = "100vw"
+			mxdiv.style.height = "90vh"
 			
 			mxdiv.appendChild(canvas)
 			Mx.loadCoreCode().then(()=> {
-				Mx.MxFun.createMxObject({
-					canvasId: 'myCanvas',
-				  cadFile: "./static/demo/buf/test2.dwg",
+				setTimeout(()=> {
+						Mx.MxFun.createMxObject({
+											canvasId: 'myCanvas',
+										    cadFile: "./static/demo/buf/test2.dwg",
+											callback(mxDrawObject, { canvas, canvasParent }) {
+												canvasParent.className = "mxdiv";
+												mxDrawObject.addEvent("loadComplete", () => {
+											
+												});
+											},
+										})
+				}, 1000)
 				
-					callback(mxDrawObject, { canvas, canvasParent }) {
-						canvasParent.className = "mxdiv";
-						mxDrawObject.addEvent("loadComplete", () => {
-					
-						});
-					},
-				})
 			})
+			
+			
 		}
 	}
 </script>
 
-<style>
-</style>
+<style></style>
